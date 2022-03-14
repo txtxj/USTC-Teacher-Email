@@ -4,7 +4,7 @@
 
 自动登录功能已经实现，不需要再手动填写 `cookies` 
 
-部分代码参考了 lly0322 的 [USTC-Teacher-Email](https://github.com/liuly0322/USTC-Tercher-Email)
+部分代码参考了 lly0322 的 [USTC-Teacher-Email](https://github.com/liuly0322/USTC-Teacher-Email)
 
 使用方法：
 
