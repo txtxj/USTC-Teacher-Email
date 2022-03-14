@@ -1,6 +1,7 @@
 from config import POOL, TEACHER_NAME
 import requests
 import json
+import re
 
 
 class Lesson:
@@ -14,9 +15,10 @@ class Lesson:
 		}
 
 	def get_lesson_id(self):
+		sn = re.findall("\d+", requests.get(url="https://jw.ustc.edu.cn/for-std/lesson-search", headers=self.headers).url)[0]
 		for name in self.teacher_name:
 			for p in POOL:
-				source = "https://jw.ustc.edu.cn/for-std/lesson-search/semester/{}/search/160221?teacherNameLike={}".format(p, name)
+				source = "https://jw.ustc.edu.cn/for-std/lesson-search/semester/{}/search/{}?teacherNameLike={}".format(p, sn, name)
 				rsp = requests.get(url=source, headers=self.headers)
 				result = json.loads(rsp.content.decode("utf-8"))
 				if len(result["data"]) == 0:

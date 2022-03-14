@@ -8,4 +8,3 @@ class Login:
 	def login(self):
 		# TODO: Use sid and pwd to get the cookies of jwc. The cookies should be stored in self.cookies
 		pass
-		
