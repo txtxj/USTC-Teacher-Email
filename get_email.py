@@ -4,11 +4,10 @@ from config import STUID, PASSWORD
 
 # Log in and get the cookies
 login = Login(STUID, PASSWORD)
-login.login()
-cookies = login.cookies
+session = login.login()
 
 # Get teacher email
-lesson = Lesson(cookies)
+lesson = Lesson(session)
 email_list = lesson.find_all()
 
 # output
