@@ -4,7 +4,7 @@
 
 自动登录功能尚未实现，需要手动填写 `cookies` 
 
-部分代码参考了 lly0322 的 [USTC-Teacher-Email](https://github.com/liuly0322/USTC-Tercher-Email)
+部分代码参考了 lly0322 的 [USTC-Tercher-Email](https://github.com/liuly0322/USTC-Tercher-Email)
 
 使用方法：
 
