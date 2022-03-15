@@ -38,6 +38,8 @@ class Lesson:
 			}
 			url = "https://jw.ustc.edu.cn/ws/course-adjustment-apply/get-teacher-info"
 			rsp = self.session.get(url, headers=self.headers, params=params)
-			email_list.append(rsp.content.decode("utf-8"))
+			pairs = json.loads(rsp.content.decode("utf-8"))
+			for s in pairs:
+				email_list.append(s)
 		return email_list
 
