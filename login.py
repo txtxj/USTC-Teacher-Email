@@ -63,5 +63,10 @@ class Login:
 		self.fineReportPw = re.search(u"var fineReportPw = '\d+';", rsp)
 		self.fineReportPw = re.search("\d+", self.fineReportPw[0])[0]
 		self.finepassword = hashlib.md5(self.fineReportPw.encode(encoding="utf-8")).hexdigest()
-		self.session.get("https://jw.ustc.edu.cn/webroot/decision/login/cross/domain?fine_username=" + self.stuid + "&fine_password=" + self.finepassword + "&validity=-1", headers=headers)
+		params = {
+			"fine_username": self.stuid,
+			"fine_password": self.finepassword,
+			"validity": "-1",
+		}
+		self.session.get("https://jw.ustc.edu.cn/webroot/decision/login/cross/domain", headers=headers, params=params)
 		return self.session

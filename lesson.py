@@ -16,9 +16,12 @@ class Lesson:
 	def get_lesson_id(self):
 		sn = re.findall("\d+", self.session.get("https://jw.ustc.edu.cn/for-std/lesson-search", headers=self.headers).url)[0]
 		for name in self.teacher_name:
+			params = {
+				"teacherNameLike": name,
+			}
 			for p in POOL:
-				source = "https://jw.ustc.edu.cn/for-std/lesson-search/semester/{}/search/{}?teacherNameLike={}".format(p, sn, name)
-				rsp = self.session.get(source, headers=self.headers)
+				source = "https://jw.ustc.edu.cn/for-std/lesson-search/semester/{}/search/{}".format(p, sn)
+				rsp = self.session.get(source, headers=self.headers, params=params)
 				result = json.loads(rsp.content.decode("utf-8"))
 				if len(result["data"]) == 0:
 					continue
@@ -30,8 +33,11 @@ class Lesson:
 		self.get_lesson_id()
 		email_list = []
 		for tid in self.lesson_id:
-			url = "https://jw.ustc.edu.cn/ws/course-adjustment-apply/get-teacher-info?lessonId={}".format(tid)
-			rsp = self.session.get(url, headers=self.headers)
+			params = {
+				"lessonId": tid,
+			}
+			url = "https://jw.ustc.edu.cn/ws/course-adjustment-apply/get-teacher-info"
+			rsp = self.session.get(url, headers=self.headers, params=params)
 			email_list.append(rsp.content.decode("utf-8"))
 		return email_list
 
