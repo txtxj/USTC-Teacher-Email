@@ -19,7 +19,7 @@
 
 ---
 
-感谢 [liuly0322](https://github.com/liuly0322) 指出了本项目中的一些问题，这是他的 JavaScript版 [USTC-Teacher-Email](https://github.com/liuly0322/USTC-Teacher-Email)
+感谢 [liuly0322](https://github.com/liuly0322) 指出了本项目中的一些问题，这是他的 JavaScript 版 [USTC-Teacher-Email](https://github.com/liuly0322/USTC-Teacher-Email)
 
 感谢 [aysyxx53](https://github.com/aysyxx53) 与 [Kobe972](https://github.com/Kobe972) 为本项目 `login.py` 提供了思路与模板
 
