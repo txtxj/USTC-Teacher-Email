@@ -11,6 +11,10 @@
 - 在 `config.py` 中填写学号、密码、需要查询的老师姓名
 - 运行 `python get_email.py` 
 
+本分支使用了 `Pillow` 和 `pytesseract` 进行了验证码的识别，
+
+如果安装依赖有困难，可以使用本仓库的 [`non_LT`](https://github.com/txtxj/USTC-Teacher-Email/tree/non_LT) 分支。
+
 目前仅支持根据教师姓名查询，根据课堂号查询还没搞（懒得搞了）
 
 另外，由于一门课可能有多个老师，所以查询结果可能会有其他老师混进来（也不想搞了）
