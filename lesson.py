@@ -40,6 +40,10 @@ class Lesson:
 			rsp = self.session.get(url, headers=self.headers, params=params)
 			pairs = json.loads(rsp.content.decode("utf-8"))
 			for s in pairs:
-				email_list.append(s)
-		return email_list
+				email_list = email_list | s
+		result = []
+		for name in self.teacher_name:
+			if name in email_list:
+				result.append("{}: {}".format(name, email_list[name]))
+		return result
 
