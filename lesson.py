@@ -31,7 +31,7 @@ class Lesson:
 
 	def find_all(self):
 		self.get_lesson_id()
-		email_list = []
+		email_list = dict()
 		for tid in self.lesson_id:
 			params = {
 				"lessonId": tid,
