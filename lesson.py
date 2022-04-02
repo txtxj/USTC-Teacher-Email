@@ -42,6 +42,7 @@ class Lesson:
 			rsp = self.session.get(url, headers=self.headers, params=params)
 			pairs = json.loads(rsp.content.decode("utf-8"))
 			for s in pairs:
+				# use 'email_list = dict(email_list, **s)' instead
 				email_list = email_list | s
 		result = []
 		for name in self.teacher_name:
