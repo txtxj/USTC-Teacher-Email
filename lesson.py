@@ -14,7 +14,9 @@ class Lesson:
 		}
 
 	def get_lesson_id(self):
-		sn = re.findall("\d+", self.session.get("https://jw.ustc.edu.cn/for-std/lesson-search", headers=self.headers).url)[0]
+		sn = \
+			re.findall("\d+",
+					   self.session.get("https://jw.ustc.edu.cn/for-std/lesson-search", headers=self.headers).url)[0]
 		for name in self.teacher_name:
 			params = {
 				"teacherNameLike": name,
@@ -31,7 +33,7 @@ class Lesson:
 
 	def find_all(self):
 		self.get_lesson_id()
-		email_list = []
+		email_list = dict()
 		for tid in self.lesson_id:
 			params = {
 				"lessonId": tid,
@@ -40,6 +42,9 @@ class Lesson:
 			rsp = self.session.get(url, headers=self.headers, params=params)
 			pairs = json.loads(rsp.content.decode("utf-8"))
 			for s in pairs:
-				email_list.append(s)
-		return email_list
-
+				email_list = email_list | s
+		result = []
+		for name in self.teacher_name:
+			if name in email_list:
+				result.append("{}: {}".format(name, email_list[name]))
+		return result
