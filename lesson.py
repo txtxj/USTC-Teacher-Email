@@ -27,9 +27,16 @@ class Lesson:
 				result = json.loads(rsp.content.decode("utf-8"))
 				if len(result["data"]) == 0:
 					continue
+				for course in result["data"]:
+					course_id = course["id"]
+					teachers = course["teacherAssignmentList"]
+					teachers = [teacher["person"]["nameZh"] for teacher in teachers]
+					if name in teachers:
+						self.lesson_id.append(course_id)
+						break
 				else:
-					self.lesson_id.append(result["data"][0]["id"])
-					break
+					continue
+				break
 
 	def find_all(self):
 		self.get_lesson_id()
