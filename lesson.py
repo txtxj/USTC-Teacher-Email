@@ -30,7 +30,7 @@ class Lesson:
 				for course in result["data"]:
 					course_id = course["id"]
 					teachers = course["teacherAssignmentList"]
-					teachers = [teacher["person"]["nameZh"] for teacher in teachers]
+					teachers = [teacher["person"]["nameZh"] for teacher in teachers] + [teacher["person"]["nameEn"] for teacher in teachers]
 					if name in teachers:
 						self.lesson_id.append(course_id)
 						break
