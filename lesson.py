@@ -8,7 +8,7 @@ class Lesson:
 		self.session = session
 		self.lesson_id = []
 		self.email = None
-		self.teacher_name = TEACHER_NAME.split(" ")
+		self.teacher_name = TEACHER_NAME.split(",")
 		self.headers = {
 			'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36'
 		}
@@ -55,4 +55,6 @@ class Lesson:
 		for name in self.teacher_name:
 			if name in email_list:
 				result.append("{}: {}".format(name, email_list[name]))
+			else:
+				result.append("{} not found".format(name))
 		return result

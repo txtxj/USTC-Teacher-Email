@@ -7,5 +7,5 @@ PASSWORD = "114514aaaaaaa~"
 
 # Here puts the teacher's name
 # Use space to split
-TEACHER_NAME = "xkz 马建辉 安虹"
+TEACHER_NAME = "xkz,马建辉,安虹,Donald Rogers"
 
