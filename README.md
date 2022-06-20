@@ -1,8 +1,6 @@
 # USTC 教师邮箱查询
 
-原仓库由于诸多问题已删除，该仓库为重构后版本
-
-自动登录功能已经实现，不需要再手动填写 `cookies` 
+JS 版插件可在此处获取 https://greasyfork.org/zh-CN/scripts/446788
 
 使用方法：
 
