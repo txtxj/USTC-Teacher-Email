@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         USTC Teacher Email
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.2
 // @description  Get Teacher Email
 // @author       txtxj
-// @match        https://jw.ustc.edu.cn/home
+// @match        https://jw.ustc.edu.cn/home*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=github.com
 // @grant        none
 // ==/UserScript==
@@ -76,5 +76,5 @@ $(window).on("load", function() {
     title.appendChild(li);
     li.appendChild(btn);
     let space = document.getElementsByClassName("toolbarView nav navbar-nav ")[0];
-    space.style.width = "auto";
+    space.style.width = "calc(100% - 256px)";
 });
