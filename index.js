@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         USTC Teacher Email
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.1
 // @description  Get Teacher Email
 // @author       txtxj
 // @match        https://jw.ustc.edu.cn/home
@@ -18,7 +18,7 @@ $(window).on("load", function() {
     li.setAttribute("class", "tabLi active");
     let btn = document.createElement("a");
     btn.href = "javascript:void(0)";
-    btn.onclick = function(){
+    btn.onclick = function() {
         var teacherName = prompt("请输入老师姓名\n搜索需要用时约 30 秒\n搜索结果将以弹窗形式给出\n详细输出可在控制台查看");
 
         async function getTeacherEmail(teacher, terms=10, interval=3) {
@@ -75,4 +75,6 @@ $(window).on("load", function() {
     btn.innerHTML = " 邮箱 ";
     title.appendChild(li);
     li.appendChild(btn);
+    let space = document.getElementsByClassName("toolbarView nav navbar-nav ")[0];
+    space.style.width = "auto";
 });
