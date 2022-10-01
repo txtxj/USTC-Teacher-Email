@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         USTC Teacher Email
 // @namespace    http://tampermonkey.net/
-// @version      1.2
+// @version      1.3
 // @description  Get Teacher Email
 // @author       txtxj
 // @match        https://jw.ustc.edu.cn/home*
@@ -75,6 +75,7 @@ $(window).on("load", function() {
     btn.innerHTML = " 邮箱 ";
     title.appendChild(li);
     li.appendChild(btn);
+
     let space = document.getElementsByClassName("toolbarView nav navbar-nav ")[0];
-    space.style.width = "calc(100% - 256px)";
+    space.style.width = "65%";
 });
