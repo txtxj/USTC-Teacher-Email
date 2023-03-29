@@ -1,6 +1,6 @@
 # USTC 教师邮箱查询
 
-JS 版插件可在此处获取 https://greasyfork.org/zh-CN/scripts/446788
+JS 版插件可在此处获取 https://greasyfork.org/zh-CN/scripts/446788-ustc-teacher-email
 
 使用方法：
 
